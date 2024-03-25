@@ -27,11 +27,14 @@ const FilterSection = () => {
             placeholder="    Assignee Name"
           />
           <div className="relative">
-            <input
-              type="text"
-              className="appearance-none block w-52 mr-5 bg-gray-200 text-gray-700 border border-gray-200 rounded py-2 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-              placeholder="Select an option"
-            />
+        
+            <select className="appearance-none block w-52 mr-5 bg-gray-200 text-gray-700 border border-gray-200 rounded py-2 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
+              <option className="text-gray-700 appearance-none">Priority</option>
+              <option>P1</option>
+              <option>P2</option>
+              <option>P3</option>
+
+            </select>
             <div className="absolute inset-y-0 right-0 flex items-center px-8 pointer-events-none">
               <svg
                 className="fill-current h-4 w-4 text-gray-500"
@@ -73,16 +76,18 @@ const FilterSection = () => {
        </div>
         
   
-      <div className="flex flex-wrap  items-center ml-[145px]   pt-5">
+      <div className="flex flex-wrap  items-center ml-[120px]   pt-5">
         <label htmlFor="sort" className="mr-4 font-semibold">
           Sort By:
         </label>
         <div className="relative">
-          <input
-            type="text"
-            className="appearance-none block w-52 mr-5 bg-gray-200 text-gray-700 border border-gray-200 rounded py-2 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-            placeholder="Select an option"
-          />
+        <select className="appearance-none block w-52 mr-5 bg-gray-200 text-gray-700 border border-gray-200 rounded py-2 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
+              <option className="text-gray-700 appearance-none ">Priority</option>
+              <option>P1</option>
+              <option>P2</option>
+              <option>P3</option>
+
+            </select>
           <div className="absolute inset-y-0 right-0 flex items-center px-8 pointer-events-none">
             <svg
               className="fill-current h-4 w-4 text-gray-500"
