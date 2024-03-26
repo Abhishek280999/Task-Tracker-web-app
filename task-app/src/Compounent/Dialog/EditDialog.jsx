@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
-const EditDialog = ({ isOpen, onClose }) => {
-
+const EditDialog = ({ isOpen, onClose,tasks1 }) => {
+console.log(tasks1)
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [team, setTeam] = useState('');
@@ -45,7 +45,7 @@ const EditDialog = ({ isOpen, onClose }) => {
             <input
               className="appearance-none bg-gray-300 border ml-16 rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
               type="text"
-              value={"njekfkheh"}
+              value={'Task 1'}
               onChange={(e) => setTitle(e.target.value)}
             />
           </label>
@@ -55,7 +55,7 @@ const EditDialog = ({ isOpen, onClose }) => {
             Description:
             <textarea
               className="appearance-none bg-gray-300 border ml-3 rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline h-20"
-              value={description}
+              value={"It seems like you're mentioning  task manager . If you're looking to create a task manager application using React. "}
               onChange={(e) => setDescription(e.target.value)}
             ></textarea>
           </label>
@@ -65,7 +65,7 @@ const EditDialog = ({ isOpen, onClose }) => {
             Team:
             <input
               className="appearance-none bg-gray-300 border ml-14 rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
-              value={team}
+              value={"Avengers"}
               onChange={(e) => setTeam(e.target.value)}
             />
           </label>
@@ -75,13 +75,14 @@ const EditDialog = ({ isOpen, onClose }) => {
             Assignees:
             <input
               className="appearance-none bg-gray-300 ml-5 border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
-              value={assignees}
+              value={"@Pravin"}
               onChange={(e) => setAssignees(e.target.value)}
             />
           </label>
         </div>
-        <div className="mb-4 relative">
-          <label className="flex text-gray-700 font-semibold mb-2 ">
+        <div className="mb-4 relative flex">
+         <div>
+         <label className="flex text-gray-700 mt-6 font-semibold mb-2 ">
             Priority:
             <select
               className="block appearance-none  bg-gray-300 w-12 ml-10  border border-gray-200 text-gray-700 py-2 px-2 pr-2 rounded leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
@@ -92,7 +93,7 @@ const EditDialog = ({ isOpen, onClose }) => {
               <option value="P2">P2</option>
               <option value="P3">P3</option>
             </select>
-            <div className="absolute left-24 top-3 right-6  flex items-center px-8 pointer-events-none">
+            <div className="absolute left-24 top-9 right-6  flex items-center px-8 pointer-events-none">
             <svg
               className="fill-current h-4 w-4 text-black"
               xmlns="http://www.w3.org/2000/svg"
@@ -102,6 +103,21 @@ const EditDialog = ({ isOpen, onClose }) => {
             </svg>
           </div>
           </label>
+         </div>
+          <div>
+          <label className="flex text-gray-700 font-semibold ml-14  mt-6">
+            Status:
+            <select
+              className="block appearance-none  bg-gray-300 w-32 ml-2 border border-gray-200 text-gray-700 py-2 px-2 pr-2 rounded leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+              value={priority}
+              onChange={(e) => setPriority(e.target.value)}
+            >
+              <option value="P1">Pending</option>
+              <option defaultValue={"Completed"} value="P2">Completed</option>
+              <option value="P3">In Progress</option>
+            </select>
+          </label>
+          </div>
         </div>
         <button className="bg-blue-500 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded">
           Create Task

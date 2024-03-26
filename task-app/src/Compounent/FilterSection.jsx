@@ -90,24 +90,17 @@ const FilterSection = () => {
        </div>
     
       <div className="flex flex-wrap  items-center ml-[120px]   pt-4">
-        <div className="relative flex font-semibold appearance-nonex ">
-        Sort By:
-        <select className="appearance-none block w-52 ml-5  bg-gray-200 text-gray-700 border border-gray-200 rounded py-2 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
-              <option className="text-gray-700 appearance-none ">Priority</option>
+        <div className=" flex font-semibold appearance-nonex ">
+        <label htmlFor="assignee" className=" mt-1 font-semibold ">
+            Sort By:
+          </label>
+          <select className="appearance-none block w-52 ml-4 bg-gray-200 text-gray-700 border border-gray-200 rounded py-2 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
+              <option className="text-gray-400 appearance-none">Priority </option>
               <option>P1</option>
               <option>P2</option>
               <option>P3</option>
 
             </select>
-          <div className="absolute inset-y-0 right-0 flex items-center px-8 pointer-events-none">
-            <svg
-              className="fill-current h-4 w-4 text-gray-500"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 20 20"
-            >
-              <path d="M10 12L3 5h14z" />
-            </svg>
-          </div>
         </div>
       </div>
     </div>
