@@ -1,7 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import MoreVertIcon from '@mui/icons-material/MoreVert';
+import EditDialog from "./Dialog";
+import Dialog from "./Dialog";
+
+
 
 const TaskPrograss = ({ tasks1, tasks2, tasks3, tasks4, tasks5 }) => {
+
+const [isDialogOpen, setIsDialogOpen] = useState(false);
+
+const openDialog = () => {
+  setIsDialogOpen(true);
+};
+
+const closeDialog = () => {
+  setIsDialogOpen(false);
+};
+
+
   return (
     <div className="flex flex-wrap justify-center mx-6 ">
       <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5  p-2  ">
@@ -29,7 +45,8 @@ const TaskPrograss = ({ tasks1, tasks2, tasks3, tasks4, tasks5 }) => {
               <p className="text-gray-700 pt-2  text-sm mb-2">{task.description}</p>
               <div className="flex justify-between ">
               <div className="text-gray-500">{task.User}</div>
-              <div style={{ color: 'blue' }}><MoreVertIcon/></div>
+              <div onClick={openDialog}  style={{ color: 'blue' }}><MoreVertIcon /></div>
+            <Dialog isOpen={isDialogOpen} onClose={closeDialog} />
               </div>
               <button className="bg-blue-500 w-32 mt-3 hover:bg-blue-700 text-white font-semibold py-1 px-2 rounded">
               {task.Status}
@@ -63,7 +80,8 @@ const TaskPrograss = ({ tasks1, tasks2, tasks3, tasks4, tasks5 }) => {
               <p className="text-gray-700 pt-2 text-sm mb-2">{task.description}</p>
               <div className="flex justify-between">
               <div className="text-gray-500">{task.User}</div>
-              <div style={{ color: 'blue' }}><MoreVertIcon/></div>
+               <div onClick={openDialog}  style={{ color: 'blue' }}><MoreVertIcon /></div>
+            <Dialog isOpen={isDialogOpen} onClose={closeDialog} />
               </div>
               <button className="bg-blue-500 w-32 mt-3 hover:bg-blue-700 text-white font-semibold py-1 px-2 rounded">
               {task.Status}

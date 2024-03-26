@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+
+import CreateTaskDialog from "./Dialog/CreateTaskDialog";
 
 const FilterSection = () => {
   const [startDate, setStartDate] = useState(null);
@@ -13,6 +14,17 @@ const FilterSection = () => {
 
   const handleEndDateChange = (date) => {
     setEndDate(date);
+  };
+
+
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+
+  const openDialog = () => {
+    setIsDialogOpen(true);
+  };
+
+  const closeDialog = () => {
+    setIsDialogOpen(false);
   };
   return (
     <div>
@@ -69,10 +81,12 @@ const FilterSection = () => {
          
         </div>
         <div className="pt-5 ">
-          <button className="bg-blue-500 w-44 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+          <button onClick={openDialog} className="bg-blue-500 w-44 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
             Add New Task
           </button>
+          <CreateTaskDialog isOpen={isDialogOpen} onClose={closeDialog} />
         </div>
+        
        </div>
         
   
@@ -81,7 +95,7 @@ const FilterSection = () => {
           Sort By:
         </label>
         <div className="relative">
-        <select className="appearance-none block w-52 mr-5 bg-gray-200 text-gray-700 border border-gray-200 rounded py-2 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
+        <select className="appearance-none block w-52 mr-5  bg-gray-200 text-gray-700 border border-gray-200 rounded py-2 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
               <option className="text-gray-700 appearance-none ">Priority</option>
               <option>P1</option>
               <option>P2</option>
