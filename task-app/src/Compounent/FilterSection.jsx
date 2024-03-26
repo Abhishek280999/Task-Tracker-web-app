@@ -27,7 +27,7 @@ const FilterSection = () => {
     setIsDialogOpen(false);
   };
   return (
-    <div>
+    <div className="flex flex-col">
        <div className="flex flex-col md:flex-row justify-around flex-wrap ">
        <div className="flex flex-wrap  items-center  pt-5 ">
           <label htmlFor="assignee" className="mr-2 font-semibold ">
@@ -88,14 +88,11 @@ const FilterSection = () => {
         </div>
         
        </div>
-        
-  
-      <div className="flex flex-wrap  items-center ml-[120px]   pt-5">
-        <label htmlFor="sort" className="mr-4 font-semibold">
-          Sort By:
-        </label>
-        <div className="relative">
-        <select className="appearance-none block w-52 mr-5  bg-gray-200 text-gray-700 border border-gray-200 rounded py-2 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
+    
+      <div className="flex flex-wrap  items-center ml-[120px]   pt-4">
+        <div className="relative flex font-semibold appearance-nonex ">
+        Sort By:
+        <select className="appearance-none block w-52 ml-5  bg-gray-200 text-gray-700 border border-gray-200 rounded py-2 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
               <option className="text-gray-700 appearance-none ">Priority</option>
               <option>P1</option>
               <option>P2</option>

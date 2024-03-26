@@ -1,8 +1,6 @@
 import React from 'react'
 
-const Dialog = ({ isOpen, onClose }) => {
-
-  
+const DelateDialog = ({ isOpen, onClose }) => {
   return (
     <div className={`fixed inset-0 flex items-center justify-center ${isOpen ? 'block' : 'hidden'}`}>
     <div className="absolute inset-0 bg-gray-900 opacity-30"></div>
@@ -12,20 +10,27 @@ const Dialog = ({ isOpen, onClose }) => {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
         </svg>
       </button>
-      <div className='flex flex-col items-center'>
-         {/* Button to open dialog for editing */}
-      <button  className="bg-gray-400 w-24 ml-2 mb-2 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2" >
-        Edit
-      </button>
+      <div >
+     <div className='mb-4 bg-white font-bold'>CREATE A TASK</div>
+      <div className="bg-gradient-to-r from-pink-200 to-blue-200 w-[400px] shadow-md p-2 ">
 
-      {/* Button to open dialog for deleting */}
-      <button className="bg-gray-400  w-24 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
-        Delete
-      </button>
+      <p>Do Yoe Wish to Delate Task</p>
+    
+        <div className='flex justify-around'>
+         <div>Task 1</div>
+        <button className="bg-blue-500 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded">
+          Create Task
+        </button>
+        <button className="bg-blue-500 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded">
+          Create Task
+        </button>
+        
+        </div>
+      </div>
       </div>
     </div>
   </div>
   )
 }
 
-export default Dialog
+export default DelateDialog
